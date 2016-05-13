@@ -37,12 +37,19 @@ class VehicleViewController: UIViewController {
     
     //MARK: - IBAction
     
-    @IBAction func carro(sender: AnyObject) {
-        self.tipo = "Carro"
+    @IBAction func tipoVehicle(sender: UISegmentedControl) {
+        switch tipoButon.selectedSegmentIndex
+        {
+        case 0:
+            self.tipo = "Carro"
+        case 1:
+            self.tipo = "Moto"
+        default:
+            break; 
+        }
     }
-    @IBAction func moto(sender: AnyObject) {
-        self.tipo = "Moto"
-    }
+    
+    
     @IBAction func save(sender: AnyObject) {
         
         if identifierView == "editVehicle" {
