@@ -49,7 +49,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="OUb-kX-un3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0j2-n4-rnQ"/>
                             <constraint firstItem="H6d-E9-Do4" firstAttribute="top" secondItem="OUb-kX-un3" secondAttribute="bottom" constant="45" id="7eZ-rE-WBS"/>
@@ -102,8 +102,8 @@
                                                             <segment title="Moto"/>
                                                         </segments>
                                                         <connections>
-                                                            <action selector="carroButon:" destination="DYm-1p-z6u" eventType="valueChanged" id="Veg-iW-Dq8"/>
-                                                            <action selector="motoButon:" destination="DYm-1p-z6u" eventType="valueChanged" id="1xU-Mj-5cD"/>
+                                                            <action selector="carro:" destination="DYm-1p-z6u" eventType="valueChanged" id="MWf-Th-0l9"/>
+                                                            <action selector="moto:" destination="DYm-1p-z6u" eventType="valueChanged" id="DFQ-Wl-Spz"/>
                                                         </connections>
                                                     </segmentedControl>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datos Generales" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0us-tN-yIH">
@@ -223,8 +223,6 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="1000"/>
                     <connections>
-                        <outlet property="botonCarro" destination="ezR-3q-wKf" id="2XL-0F-4hV"/>
-                        <outlet property="botonMoto" destination="ezR-3q-wKf" id="Fkc-Oj-rNL"/>
                         <outlet property="frecuenciaaceiteTextField" destination="tDE-Vb-cIl" id="0ke-VL-KeO"/>
                         <outlet property="kilometerTextField" destination="RId-x6-GCP" id="ceJ-dH-ACN"/>
                         <outlet property="lineaTextField" destination="msT-C8-nyb" id="bWy-MW-6C2"/>
@@ -235,6 +233,7 @@
                         <outlet property="soatTextField" destination="f3t-vm-wLH" id="yDd-cy-iCI"/>
                         <outlet property="tankTextField" destination="8XX-OQ-55y" id="V9k-Ny-ASP"/>
                         <outlet property="tecnoTextField" destination="IhV-VB-6gl" id="0o0-9V-N0k"/>
+                        <outlet property="tipoButon" destination="ezR-3q-wKf" id="aQP-YK-rru"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d0i-a7-OSU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -621,6 +620,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Av3-fq-0XL"/>
+        <segue reference="qLO-1a-GQG"/>
     </inferredMetricsTieBreakers>
 </document>

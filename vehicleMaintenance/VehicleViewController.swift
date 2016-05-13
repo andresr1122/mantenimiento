@@ -15,8 +15,7 @@ class VehicleViewController: UIViewController {
     
      //MARK: - Properties
     var ref: Firebase!
-    var tipo:String = "Carro"
-    
+    var tipo:String = ""
     var vehicle =  Vehicle()
     var identifierView : String?
     
@@ -34,17 +33,16 @@ class VehicleViewController: UIViewController {
     @IBOutlet weak var lineaTextField: UITextField!
     @IBOutlet weak var frecuenciaaceiteTextField: UITextField!
     
-    @IBOutlet weak var botonCarro: UISegmentedControl!
-    @IBOutlet weak var botonMoto: UISegmentedControl!
+       @IBOutlet weak var tipoButon: UISegmentedControl!
     
     //MARK: - IBAction
-    @IBAction func carroButon(sender: AnyObject) {
+    
+    @IBAction func carro(sender: AnyObject) {
         self.tipo = "Carro"
     }
-    @IBAction func motoButon(sender: AnyObject) {
+    @IBAction func moto(sender: AnyObject) {
         self.tipo = "Moto"
     }
-  
     @IBAction func save(sender: AnyObject) {
         
         if identifierView == "editVehicle" {
@@ -101,12 +99,11 @@ class VehicleViewController: UIViewController {
             self.placaTextField.enabled = false
             self.tipo = vehicle.tipo!
             if vehicle.tipo == "Carro"{
-                self.botonCarro.selected = true
-                self.botonMoto.selected = false
+                self.tipoButon.selectedSegmentIndex = 0
                 
             }else{
-                self.botonCarro.selected = false
-                self.botonMoto.selected = true
+                self.tipoButon.selectedSegmentIndex = 1
+                
             }
             
             
@@ -133,6 +130,7 @@ class VehicleViewController: UIViewController {
             
         }else{
             self.title = "Adicionar Vehiculo"
+            tipo = "Carro"
         }
 
     }

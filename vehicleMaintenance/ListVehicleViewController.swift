@@ -95,10 +95,10 @@ class ListVehicleViewController: UITableViewController
             vehicleRef.removeValueWithCompletionBlock({ (error, ref) -> Void in
                 
                 if error != nil {
-                    self.makeAlertWithMessage("Ha ocurrido un error al borrar")
+                    self.makeAlertWithMessage("Ha ocurrido un error al intentar borrar el vehiculo")
                     print(error.localizedDescription)
                 }else{
-                    self.makeAlertWithMessage("El contacto ha sido borrado")
+                    self.makeAlertWithMessage("El vehiculo ha sido borrado satisfactoriamente")
                 }
                 
             })
