@@ -68,7 +68,7 @@
         <!--Adicionar vehículo-->
         <scene sceneID="yHT-eX-Nbg">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="DYm-1p-z6u" customClass="VehicleViewController" customModule="vehicleMaintenance" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" id="DYm-1p-z6u" customClass="VehicleViewController" customModule="vehicleMaintenance" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZtD-Mn-4QC"/>
                         <viewControllerLayoutGuide type="bottom" id="eMF-Ab-SIu"/>
@@ -77,17 +77,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uTd-0F-AR9">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uTd-0F-AR9">
                                 <rect key="frame" x="0.0" y="64" width="600" height="936"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TVu-9A-XFe">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
+                                    <view autoresizesSubviews="NO" contentMode="top" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TVu-9A-XFe">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="936"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rgI-U5-qGk">
-                                                <rect key="frame" x="190" y="20" width="220" height="550"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rgI-U5-qGk">
+                                                <rect key="frame" x="190" y="20" width="218" height="588"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tipo vehiculo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJy-L5-tho">
-                                                        <rect key="frame" x="0.0" y="0.0" width="220" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="218" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="PYD-SP-CfX"/>
                                                         </constraints>
@@ -95,27 +95,19 @@
                                                         <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lJm-wu-yaf">
-                                                        <rect key="frame" x="0.0" y="40" width="220" height="30"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91T-a0-oMJ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="100" id="W78-QC-vtn"/>
-                                                                </constraints>
-                                                                <state key="normal" title="Carro"/>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wna-WY-8r8">
-                                                                <rect key="frame" x="120" y="0.0" width="100" height="30"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="100" id="3Ah-G6-19x"/>
-                                                                </constraints>
-                                                                <state key="normal" title="Moto"/>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ezR-3q-wKf">
+                                                        <rect key="frame" x="0.0" y="40" width="218" height="29"/>
+                                                        <segments>
+                                                            <segment title="Carro"/>
+                                                            <segment title="Moto"/>
+                                                        </segments>
+                                                        <connections>
+                                                            <action selector="carroButon:" destination="DYm-1p-z6u" eventType="valueChanged" id="Veg-iW-Dq8"/>
+                                                            <action selector="motoButon:" destination="DYm-1p-z6u" eventType="valueChanged" id="1xU-Mj-5cD"/>
+                                                        </connections>
+                                                    </segmentedControl>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datos Generales" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0us-tN-yIH">
-                                                        <rect key="frame" x="0.0" y="80" width="220" height="30"/>
+                                                        <rect key="frame" x="0.0" y="78" width="218" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="f1p-S9-NML"/>
                                                         </constraints>
@@ -124,32 +116,37 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Placa" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5u8-CB-dOw">
-                                                        <rect key="frame" x="0.0" y="120" width="220" height="30"/>
+                                                        <rect key="frame" x="0.0" y="118" width="218" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kilometraje actual" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RId-x6-GCP">
-                                                        <rect key="frame" x="0.0" y="160" width="220" height="30"/>
+                                                        <rect key="frame" x="0.0" y="158" width="218" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Marca" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QLL-UO-hg4">
-                                                        <rect key="frame" x="0.0" y="200" width="220" height="30"/>
+                                                        <rect key="frame" x="0.0" y="198" width="218" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Linea" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="msT-C8-nyb">
+                                                        <rect key="frame" x="0.0" y="238" width="218" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Modelo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b6g-dh-AFC">
-                                                        <rect key="frame" x="0.0" y="240" width="220" height="30"/>
+                                                        <rect key="frame" x="0.0" y="278" width="218" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Capacidad tanque Lt" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8XX-OQ-55y">
-                                                        <rect key="frame" x="0.0" y="280" width="220" height="30"/>
+                                                        <rect key="frame" x="0.0" y="318" width="218" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datos cambio aceite" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9g-LA-VSx">
-                                                        <rect key="frame" x="0.0" y="320" width="220" height="30"/>
+                                                        <rect key="frame" x="0.0" y="358" width="218" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="Hej-6F-Ydl"/>
                                                         </constraints>
@@ -158,17 +155,17 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ultimo cambio de aceite" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aZM-Wp-7qo">
-                                                        <rect key="frame" x="0.0" y="360" width="220" height="30"/>
+                                                        <rect key="frame" x="0.0" y="398" width="218" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="frecuencia cambio aceite (Km)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tDE-Vb-cIl">
-                                                        <rect key="frame" x="0.0" y="400" width="220" height="30"/>
+                                                        <rect key="frame" x="0.0" y="438" width="218" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha vencimiento" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23b-Hy-eKW">
-                                                        <rect key="frame" x="0.0" y="440" width="220" height="30"/>
+                                                        <rect key="frame" x="0.0" y="478" width="218" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="3qJ-UG-7YC"/>
                                                         </constraints>
@@ -177,30 +174,22 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Seguro abligatorio SOAT" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f3t-vm-wLH">
-                                                        <rect key="frame" x="0.0" y="480" width="220" height="30"/>
+                                                        <rect key="frame" x="0.0" y="518" width="218" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Técnico mecánica" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IhV-VB-6gl">
-                                                        <rect key="frame" x="0.0" y="520" width="220" height="30"/>
+                                                        <rect key="frame" x="0.0" y="558" width="218" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zu4-OK-McF">
-                                                <rect key="frame" x="279" y="894" width="42" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="rgI-U5-qGk" firstAttribute="top" secondItem="TVu-9A-XFe" secondAttribute="top" constant="20" id="4ql-ET-RXz"/>
-                                            <constraint firstAttribute="bottom" secondItem="zu4-OK-McF" secondAttribute="bottom" constant="85" id="Foq-jc-dfP"/>
-                                            <constraint firstItem="zu4-OK-McF" firstAttribute="centerX" secondItem="TVu-9A-XFe" secondAttribute="centerX" id="KPT-N8-u11"/>
-                                            <constraint firstAttribute="height" constant="1000" id="NLX-9M-Uwi"/>
+                                            <constraint firstAttribute="height" constant="800" id="NLX-9M-Uwi"/>
                                             <constraint firstItem="rgI-U5-qGk" firstAttribute="centerX" secondItem="TVu-9A-XFe" secondAttribute="centerX" id="S4v-Rm-3Y9"/>
                                         </constraints>
                                     </view>
@@ -225,7 +214,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Adicionar vehículo" id="OyD-1Y-xxk">
-                        <barButtonItem key="rightBarButtonItem" title="Guardar" id="5dO-DF-t02">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="5dO-DF-t02">
                             <connections>
                                 <action selector="save:" destination="DYm-1p-z6u" id="GTj-tJ-qdI"/>
                             </connections>
@@ -234,10 +223,15 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="1000"/>
                     <connections>
+                        <outlet property="botonCarro" destination="ezR-3q-wKf" id="2XL-0F-4hV"/>
+                        <outlet property="botonMoto" destination="ezR-3q-wKf" id="Fkc-Oj-rNL"/>
+                        <outlet property="frecuenciaaceiteTextField" destination="tDE-Vb-cIl" id="0ke-VL-KeO"/>
                         <outlet property="kilometerTextField" destination="RId-x6-GCP" id="ceJ-dH-ACN"/>
+                        <outlet property="lineaTextField" destination="msT-C8-nyb" id="bWy-MW-6C2"/>
                         <outlet property="makeTextField" destination="QLL-UO-hg4" id="xEW-ld-kxV"/>
                         <outlet property="modelTextField" destination="b6g-dh-AFC" id="2sW-Kv-Zax"/>
                         <outlet property="oilchangeTextField" destination="aZM-Wp-7qo" id="r5Z-0l-swe"/>
+                        <outlet property="placaTextField" destination="5u8-CB-dOw" id="6hP-5M-2rj"/>
                         <outlet property="soatTextField" destination="f3t-vm-wLH" id="yDd-cy-iCI"/>
                         <outlet property="tankTextField" destination="8XX-OQ-55y" id="V9k-Ny-ASP"/>
                         <outlet property="tecnoTextField" destination="IhV-VB-6gl" id="0o0-9V-N0k"/>
@@ -245,7 +239,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d0i-a7-OSU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1819" y="349"/>
+            <point key="canvasLocation" x="2633" y="475"/>
         </scene>
         <!--Lista talleres-->
         <scene sceneID="SAQ-Mn-nQS">
@@ -311,163 +305,249 @@
             </objects>
             <point key="canvasLocation" x="461" y="1127"/>
         </scene>
-        <!--Detail Vehicule View Controller-->
-        <scene sceneID="R8w-r9-IxF">
+        <!--Detalle vehiculo-->
+        <scene sceneID="S6b-7m-2nQ">
             <objects>
-                <viewController id="eNs-Zt-wz3" customClass="DetailVehiculeViewController" customModule="vehicleMaintenance" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ox3-mH-OVs" customClass="DetailVehiculeViewController" customModule="vehicleMaintenance" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="s9U-c4-3WI"/>
-                        <viewControllerLayoutGuide type="bottom" id="lyI-hl-Gfv"/>
+                        <viewControllerLayoutGuide type="top" id="yMU-hZ-UbR"/>
+                        <viewControllerLayoutGuide type="bottom" id="5uX-ey-mTR"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="5jY-p1-1ij" customClass="UITableViewCellContentView">
+                    <view key="view" contentMode="scaleToFill" id="ES1-Jd-Gd4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k5d-Zu-jbU">
-                                <rect key="frame" x="183" y="72" width="247" height="119"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QEq-pe-2d4">
+                                <rect key="frame" x="20" y="84" width="560" height="381"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="NCu-nA-T39">
-                                        <rect key="frame" x="0.0" y="0.0" width="133" height="119"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datos Generales" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgo-ej-Ooh">
+                                        <rect key="frame" x="223" y="0.0" width="114" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MBA-eW-b95">
+                                        <rect key="frame" x="149" y="27" width="262" height="179"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modelo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKe-tV-bIB">
-                                                <rect key="frame" x="77" y="0.0" width="56" height="17"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marca:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzm-fw-uyv">
-                                                <rect key="frame" x="85" y="17" width="48" height="17"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kilometraje:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8j-LS-Lqz">
-                                                <rect key="frame" x="49" y="34" width="84" height="17"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cambio de aceite:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAH-j2-pRZ">
-                                                <rect key="frame" x="9" y="51" width="124" height="17"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capacidad Tanque:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGI-7z-Rsc">
-                                                <rect key="frame" x="0.0" y="68" width="133" height="17"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TecnoMecanica:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ara-R7-ePa">
-                                                <rect key="frame" x="20" y="85" width="113" height="17"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOAT:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vp1-gD-JfI">
-                                                <rect key="frame" x="90" y="102" width="43" height="17"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="H22-Yy-07R">
+                                                <rect key="frame" x="0.0" y="0.0" width="140" height="179"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placa : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEj-7g-bek">
+                                                        <rect key="frame" x="90" y="0.0" width="50" height="17"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tipo : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjX-zV-eOZ">
+                                                        <rect key="frame" x="97" y="27" width="43" height="17"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kilometraje : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygw-pu-ihA">
+                                                        <rect key="frame" x="49" y="54" width="91" height="17"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marca : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yge-nh-Ux2">
+                                                        <rect key="frame" x="85" y="81" width="55" height="17"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Linea : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEx-bP-8KR">
+                                                        <rect key="frame" x="91" y="108" width="49" height="17"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modelo : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSb-VD-9ek">
+                                                        <rect key="frame" x="77" y="135" width="63" height="17"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capacidad Tanque : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKX-u0-Fhq">
+                                                        <rect key="frame" x="0.0" y="162" width="140" height="17"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DY4-Qd-T6V">
+                                                <rect key="frame" x="150" y="0.0" width="112" height="179"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="placa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFZ-sW-F30" userLabel="placaLabel">
+                                                        <rect key="frame" x="0.0" y="0.0" width="35" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tipo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dz8-Pd-9wh" userLabel="tipoLabel">
+                                                        <rect key="frame" x="0.0" y="27" width="25" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kilometraje" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fvh-DJ-hBa">
+                                                        <rect key="frame" x="0.0" y="54" width="71" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="marca" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZs-qV-m4c">
+                                                        <rect key="frame" x="0.0" y="81" width="40" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="linea" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTv-yd-Os1" userLabel="lineaLabel">
+                                                        <rect key="frame" x="0.0" y="108" width="31" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="modelo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EY8-nY-uY9">
+                                                        <rect key="frame" x="0.0" y="135" width="48" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="capacidadtanque" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meZ-Sl-SN8">
+                                                        <rect key="frame" x="0.0" y="162" width="112" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Rsq-jn-b76">
-                                        <rect key="frame" x="133" y="0.0" width="114" height="119"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datos cambio aceite" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NM-bX-U3h">
+                                        <rect key="frame" x="210" y="216" width="140" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="F16-fj-LYB">
+                                        <rect key="frame" x="161" y="243" width="239" height="44"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="modelo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXO-Pz-rkk">
-                                                <rect key="frame" x="2" y="0.0" width="112" height="17"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="marca" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiq-hN-qJb">
-                                                <rect key="frame" x="2" y="17" width="112" height="17"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kilometraje" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZm-xB-mvI">
-                                                <rect key="frame" x="2" y="34" width="112" height="17"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cambioaceite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFe-Qp-V2s">
-                                                <rect key="frame" x="2" y="51" width="112" height="17"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="capacidadtanque" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNL-XT-cxn">
-                                                <rect key="frame" x="2" y="68" width="112" height="17"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rra-he-Wt2" userLabel="kilometertext">
-                                                <rect key="frame" x="-1" y="85" width="115" height="0.0"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="115" id="TVo-7l-ucf"/>
-                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="wvC-72-VZu"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tecnomecanica" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Po-iT-j8i">
-                                                <rect key="frame" x="2" y="85" width="112" height="17"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="soat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePn-vl-BrX">
-                                                <rect key="frame" x="2" y="102" width="112" height="17"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wIC-Gy-db5">
+                                                <rect key="frame" x="0.0" y="0.0" width="142" height="44"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ultimo cambio : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFl-IP-5Oy">
+                                                        <rect key="frame" x="31" y="0.0" width="111" height="17"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frecuencia cambio : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rm1-Dc-20Y">
+                                                        <rect key="frame" x="0.0" y="27" width="142" height="17"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="a0W-fJ-gG6">
+                                                <rect key="frame" x="152" y="0.0" width="87" height="44"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cambioaceite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="da2-rp-9Al">
+                                                        <rect key="frame" x="0.0" y="0.0" width="87" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="frecuencia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="no1-z3-OXt" userLabel="frecuenciaLabel">
+                                                        <rect key="frame" x="0.0" y="27" width="68" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha vencimiento" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbC-O7-ipD">
+                                        <rect key="frame" x="215" y="297" width="130" height="30"/>
                                         <constraints>
-                                            <constraint firstItem="TXO-Pz-rkk" firstAttribute="leading" secondItem="Rsq-jn-b76" secondAttribute="leading" constant="2" id="9fG-GL-qgQ"/>
-                                            <constraint firstItem="kiq-hN-qJb" firstAttribute="leading" secondItem="Rsq-jn-b76" secondAttribute="leading" constant="2" id="CJo-fo-L9W"/>
-                                            <constraint firstItem="0Po-iT-j8i" firstAttribute="leading" secondItem="Rsq-jn-b76" secondAttribute="leading" constant="2" id="KQD-rv-1M9"/>
-                                            <constraint firstItem="PNL-XT-cxn" firstAttribute="leading" secondItem="Rsq-jn-b76" secondAttribute="leading" constant="2" id="N5f-zF-blr"/>
-                                            <constraint firstItem="bZm-xB-mvI" firstAttribute="leading" secondItem="Rsq-jn-b76" secondAttribute="leading" constant="2" id="dvj-KK-37E"/>
-                                            <constraint firstItem="oFe-Qp-V2s" firstAttribute="leading" secondItem="Rsq-jn-b76" secondAttribute="leading" constant="2" id="mOl-5U-s2T"/>
-                                            <constraint firstItem="ePn-vl-BrX" firstAttribute="leading" secondItem="Rsq-jn-b76" secondAttribute="leading" constant="2" id="qfs-rX-8RG"/>
+                                            <constraint firstAttribute="height" constant="30" id="YOk-nV-Iys"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XhN-Df-k31">
+                                        <rect key="frame" x="135" y="337" width="290" height="44"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yp2-De-eYO">
+                                                <rect key="frame" x="0.0" y="0.0" width="181" height="44"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Técnico mecánica : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4b-UI-p2G" userLabel="Tecnico mecanica : ">
+                                                        <rect key="frame" x="46" y="0.0" width="135" height="17"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seguro obligatorio SOAT : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsQ-V5-K7F">
+                                                        <rect key="frame" x="0.0" y="27" width="181" height="17"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wj2-A8-4GW">
+                                                <rect key="frame" x="191" y="0.0" width="99" height="44"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tecnomecanica" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMr-HL-VTd">
+                                                        <rect key="frame" x="0.0" y="0.0" width="99" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="soat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhV-dV-5bh">
+                                                        <rect key="frame" x="0.0" y="27" width="28" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dv-JN-Kda">
-                                <rect key="frame" x="278" y="199" width="44" height="30"/>
-                                <state key="normal" title="Editar "/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="k5d-Zu-jbU" firstAttribute="centerX" secondItem="5jY-p1-1ij" secondAttribute="centerX" id="XvU-MQ-MAl"/>
-                            <constraint firstItem="3dv-JN-Kda" firstAttribute="centerX" secondItem="k5d-Zu-jbU" secondAttribute="centerX" id="aiP-Yj-Ml9"/>
-                            <constraint firstItem="3dv-JN-Kda" firstAttribute="top" secondItem="k5d-Zu-jbU" secondAttribute="bottom" constant="8" symbolic="YES" id="clb-zg-zo6"/>
-                            <constraint firstItem="k5d-Zu-jbU" firstAttribute="top" secondItem="s9U-c4-3WI" secondAttribute="bottom" constant="8" symbolic="YES" id="dGW-WU-BCv"/>
+                            <constraint firstAttribute="trailing" secondItem="QEq-pe-2d4" secondAttribute="trailing" constant="20" id="aGM-cD-0K4"/>
+                            <constraint firstItem="QEq-pe-2d4" firstAttribute="top" secondItem="yMU-hZ-UbR" secondAttribute="bottom" constant="20" id="dbQ-lI-4zU"/>
+                            <constraint firstItem="QEq-pe-2d4" firstAttribute="leading" secondItem="ES1-Jd-Gd4" secondAttribute="leading" constant="20" id="u97-sw-oam"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Detalle vehiculo" id="6fV-DA-t9W">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="r19-Kr-wT5">
+                            <connections>
+                                <action selector="editButon:" destination="Ox3-mH-OVs" id="k28-sL-GU3"/>
+                                <segue destination="DYm-1p-z6u" kind="show" identifier="editVehicle" id="Av3-fq-0XL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="kilometerLabel" destination="bZm-xB-mvI" id="XVf-HV-kgU"/>
-                        <outlet property="makeLabel" destination="kiq-hN-qJb" id="gry-1e-HCU"/>
-                        <outlet property="modelLabel" destination="TXO-Pz-rkk" id="Sr1-Br-Z5d"/>
-                        <outlet property="oilchangeLable" destination="oFe-Qp-V2s" id="moG-QU-2NH"/>
-                        <outlet property="soatLabel" destination="ePn-vl-BrX" id="I84-bk-fRg"/>
-                        <outlet property="tankLabel" destination="PNL-XT-cxn" id="9yx-zg-srd"/>
-                        <outlet property="tecnoLabel" destination="0Po-iT-j8i" id="On7-NN-kbk"/>
+                        <outlet property="cambioaceiteLabel" destination="da2-rp-9Al" id="Dqc-S3-SQI"/>
+                        <outlet property="capacidadtanqueLabel" destination="meZ-Sl-SN8" id="8dr-H1-xg3"/>
+                        <outlet property="frecuenciaLabel" destination="no1-z3-OXt" id="JWO-uO-cT5"/>
+                        <outlet property="kilometrajeLabel" destination="Fvh-DJ-hBa" id="F5u-Lh-41D"/>
+                        <outlet property="lineaLabel" destination="kTv-yd-Os1" id="Evu-Se-JAQ"/>
+                        <outlet property="marcaLabel" destination="lZs-qV-m4c" id="M13-jQ-vSK"/>
+                        <outlet property="modeloLabel" destination="EY8-nY-uY9" id="9d6-9t-Gp7"/>
+                        <outlet property="placaLabel" destination="gFZ-sW-F30" id="aIL-gi-SZ1"/>
+                        <outlet property="soatLabel" destination="zhV-dV-5bh" id="vHy-jF-FQn"/>
+                        <outlet property="tecnoLabel" destination="lMr-HL-VTd" id="mhj-3V-oJS"/>
+                        <outlet property="tipoLabel" destination="dz8-Pd-9wh" id="Sfh-x8-e2G"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9fU-qi-ZqU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RT5-LP-qMh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1873" y="1306"/>
+            <point key="canvasLocation" x="1920" y="1308"/>
         </scene>
-        <!--List Vehicle View Controller-->
+        <!--Mis vehiculos-->
         <scene sceneID="nnN-JF-c03">
             <objects>
                 <tableViewController id="b9s-3c-J9G" customClass="ListVehicleViewController" customModule="vehicleMaintenance" customModuleProvider="target" sceneMemberID="viewController">
@@ -500,7 +580,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="eNs-Zt-wz3" kind="show" identifier="detailvehicle" id="avt-4e-86P"/>
+                                    <segue destination="Ox3-mH-OVs" kind="show" identifier="detailvehicle" id="rML-ob-cTC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -509,6 +589,13 @@
                             <outlet property="delegate" destination="b9s-3c-J9G" id="jeQ-V1-6ji"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Mis vehiculos" id="PXG-fv-sEr">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Tc9-F0-OEz">
+                            <connections>
+                                <segue destination="DYm-1p-z6u" kind="show" identifier="addVehicle" id="oyw-GS-Try"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kg6-4X-xxJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -533,4 +620,7 @@
             <point key="canvasLocation" x="428" y="349"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Av3-fq-0XL"/>
+    </inferredMetricsTieBreakers>
 </document>

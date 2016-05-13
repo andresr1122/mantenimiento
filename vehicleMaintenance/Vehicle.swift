@@ -21,8 +21,14 @@ class Vehicle {
     var soat:String?
     var tecno:String?
     
+    var placa:String?
+    var tipo:String?
+    var linea:String?
+    var frecuenciaaceite:String?
+    
+    
     // MARK: Init
-    init(id:String,model:String, make:String, kilometers:String, oilchange:String, tank:String, soat:String, tecno:String){
+    init(id:String,model:String, make:String, kilometers:String, oilchange:String, tank:String, soat:String, tecno:String, placa:String, tipo:String, linea:String, frecuenciaaceite:String){
         self.id  = id
         self.model = model
         self.make = make
@@ -31,17 +37,31 @@ class Vehicle {
         self.tank = tank
         self.soat = soat
         self.tecno = tecno
+        self.placa = placa
+        self.tipo = tipo
+        self.linea = linea
+        self.frecuenciaaceite = frecuenciaaceite
         
     }
 
     convenience init(){
-        self.init(id:"",model:"", make:"",kilometers:"", oilchange:"", tank:"", soat:"", tecno:"")
+        self.init(id:"",model:"", make:"",kilometers:"", oilchange:"", tank:"", soat:"", tecno:"", placa:"", tipo:"",linea:"", frecuenciaaceite:"")
     }
     
     
     convenience init(snapshot:FDataSnapshot){
-        self.init(id:snapshot.key, model:snapshot.value["model"] as! String,
-        make:snapshot.value["make"] as! String, kilometers:snapshot.value["kilometers"] as! String, oilchange:snapshot.value["oilchange"] as! String, tank:snapshot.value["tank"] as! String, soat:snapshot.value["soat"] as! String, tecno:snapshot.value["tecno"] as! String)
+        self.init(id:snapshot.key,
+            model:snapshot.value["model"] as! String,
+            make:snapshot.value["make"] as! String,
+            kilometers:snapshot.value["kilometers"] as! String,
+            oilchange:snapshot.value["oilchange"] as! String,
+            tank:snapshot.value["tank"] as! String,
+            soat:snapshot.value["soat"] as! String,
+            tecno:snapshot.value["tecno"] as! String,
+            placa:snapshot.value["placa"] as! String,
+            tipo:snapshot.value["tipo"] as! String,
+            linea:snapshot.value["linea"] as! String,
+            frecuenciaaceite:snapshot.value["frecuenciaaceite"] as! String)
     }
     
     
@@ -53,7 +73,11 @@ class Vehicle {
             "oilchange":oilchange!,
             "tank":tank!,
             "soat":soat!,
-            "tecno":tecno!
+            "tecno":tecno!,
+            "placa":placa!,
+            "tipo":tipo!,
+            "linea":linea!,
+            "frecuenciaaceite":frecuenciaaceite!
         ]
     }
     

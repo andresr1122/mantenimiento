@@ -57,20 +57,6 @@ class ListVehicleViewController: UITableViewController
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let  destionationVC = segue.destinationViewController as? DetailVehiculeViewController
-        {
-            if segue.identifier == "detailvehicle" {
-                if let vehicule = sender as? Vehicle {
-                    destionationVC.modelo = vehicule
-                }
-                
-            }
-        
-        
-        }
-    }
     
     
 
@@ -86,7 +72,7 @@ class ListVehicleViewController: UITableViewController
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
         let vehicle = vehicles[indexPath.row]
         //cell.textLabel!.numberOfLines = 0
-        cell.textLabel!.text = vehicle.make
+        cell.textLabel!.text = vehicle.make! + " " + vehicle.linea!
         cell.detailTextLabel!.text = vehicle.kilometers
         
         return cell
@@ -122,6 +108,21 @@ class ListVehicleViewController: UITableViewController
     }
     
     
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let  destionationVC = segue.destinationViewController as? DetailVehiculeViewController
+        {
+            if segue.identifier == "detailvehicle" {
+                if let vehicule = sender as? Vehicle {
+                    destionationVC.modelo = vehicule
+                }
+                
+            }
+            
+            
+        }
+    }
+
     
     
     // MARK: - DetailViewControllerDelegate
