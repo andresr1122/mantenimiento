@@ -74,11 +74,11 @@
                         <viewControllerLayoutGuide type="bottom" id="eMF-Ab-SIu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8Ag-7f-1Db">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="uTd-0F-AR9">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="736"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rgI-U5-qGk">
                                         <rect key="frame" x="51" y="20" width="218" height="588"/>
@@ -186,7 +186,7 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="rgI-U5-qGk" secondAttribute="bottom" constant="20" id="AFH-n2-dwu"/>
+                                    <constraint firstAttribute="bottom" secondItem="rgI-U5-qGk" secondAttribute="bottom" constant="250" id="AFH-n2-dwu"/>
                                     <constraint firstAttribute="trailing" secondItem="5u8-CB-dOw" secondAttribute="trailing" constant="51" id="Bk3-H9-PIE"/>
                                     <constraint firstItem="5u8-CB-dOw" firstAttribute="leading" secondItem="uTd-0F-AR9" secondAttribute="leading" constant="51" id="CGb-O6-mSS"/>
                                     <constraint firstItem="rgI-U5-qGk" firstAttribute="top" secondItem="uTd-0F-AR9" secondAttribute="top" constant="20" id="LwP-h1-iGP"/>
@@ -210,7 +210,8 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="800"/>
                     <connections>
                         <outlet property="frecuenciaaceiteTextField" destination="tDE-Vb-cIl" id="0ke-VL-KeO"/>
                         <outlet property="kilometerTextField" destination="RId-x6-GCP" id="ceJ-dH-ACN"/>
