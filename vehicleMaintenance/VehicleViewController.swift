@@ -51,7 +51,7 @@ class VehicleViewController: UIViewController {
     
     
     @IBAction func save(sender: AnyObject) {
-        
+        self.view.endEditing(true)
         if identifierView == "editVehicle" {
             
             vehicle.tipo = self.tipo
@@ -169,6 +169,11 @@ class VehicleViewController: UIViewController {
         }))
         self.presentViewController(alert, animated: true, completion: nil)
         
+    }
+    
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+         self.view.endEditing(true)
     }
 
 }

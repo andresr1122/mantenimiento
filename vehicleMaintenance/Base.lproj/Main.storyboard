@@ -74,130 +74,123 @@
                         <viewControllerLayoutGuide type="bottom" id="eMF-Ab-SIu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8Ag-7f-1Db">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uTd-0F-AR9">
-                                <rect key="frame" x="0.0" y="64" width="600" height="936"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="uTd-0F-AR9">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
-                                    <view autoresizesSubviews="NO" contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="TVu-9A-XFe">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rgI-U5-qGk">
+                                        <rect key="frame" x="51" y="20" width="218" height="588"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rgI-U5-qGk">
-                                                <rect key="frame" x="191" y="20" width="218" height="588"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tipo vehiculo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJy-L5-tho">
-                                                        <rect key="frame" x="0.0" y="0.0" width="218" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="PYD-SP-CfX"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                        <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ezR-3q-wKf">
-                                                        <rect key="frame" x="0.0" y="40" width="218" height="29"/>
-                                                        <segments>
-                                                            <segment title="Carro"/>
-                                                            <segment title="Moto"/>
-                                                        </segments>
-                                                        <connections>
-                                                            <action selector="tipoVehicle:" destination="DYm-1p-z6u" eventType="valueChanged" id="eIK-DW-XHb"/>
-                                                        </connections>
-                                                    </segmentedControl>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datos Generales" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0us-tN-yIH">
-                                                        <rect key="frame" x="0.0" y="78" width="218" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="f1p-S9-NML"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                        <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Placa" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5u8-CB-dOw">
-                                                        <rect key="frame" x="0.0" y="118" width="218" height="30"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kilometraje actual" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RId-x6-GCP">
-                                                        <rect key="frame" x="0.0" y="158" width="218" height="30"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Marca" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QLL-UO-hg4">
-                                                        <rect key="frame" x="0.0" y="198" width="218" height="30"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Linea" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="msT-C8-nyb">
-                                                        <rect key="frame" x="0.0" y="238" width="218" height="30"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Modelo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b6g-dh-AFC">
-                                                        <rect key="frame" x="0.0" y="278" width="218" height="30"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Capacidad tanque Lt" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8XX-OQ-55y">
-                                                        <rect key="frame" x="0.0" y="318" width="218" height="30"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datos cambio aceite" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9g-LA-VSx">
-                                                        <rect key="frame" x="0.0" y="358" width="218" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="Hej-6F-Ydl"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                        <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ultimo cambio de aceite" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aZM-Wp-7qo">
-                                                        <rect key="frame" x="0.0" y="398" width="218" height="30"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="frecuencia cambio aceite (Km)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tDE-Vb-cIl">
-                                                        <rect key="frame" x="0.0" y="438" width="218" height="30"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha vencimiento" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23b-Hy-eKW">
-                                                        <rect key="frame" x="0.0" y="478" width="218" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="3qJ-UG-7YC"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                        <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Seguro abligatorio SOAT" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f3t-vm-wLH">
-                                                        <rect key="frame" x="0.0" y="518" width="218" height="30"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Técnico mecánica" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IhV-VB-6gl">
-                                                        <rect key="frame" x="0.0" y="558" width="218" height="30"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                </subviews>
-                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tipo vehiculo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJy-L5-tho">
+                                                <rect key="frame" x="0.0" y="0.0" width="218" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="PYD-SP-CfX"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ezR-3q-wKf">
+                                                <rect key="frame" x="0.0" y="40" width="218" height="29"/>
+                                                <segments>
+                                                    <segment title="Carro"/>
+                                                    <segment title="Moto"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="tipoVehicle:" destination="DYm-1p-z6u" eventType="valueChanged" id="eIK-DW-XHb"/>
+                                                </connections>
+                                            </segmentedControl>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datos Generales" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0us-tN-yIH">
+                                                <rect key="frame" x="0.0" y="78" width="218" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="f1p-S9-NML"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Placa" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5u8-CB-dOw">
+                                                <rect key="frame" x="0.0" y="118" width="218" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="218" id="r1W-zY-gYe"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kilometraje actual" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RId-x6-GCP">
+                                                <rect key="frame" x="0.0" y="158" width="218" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Marca" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QLL-UO-hg4">
+                                                <rect key="frame" x="0.0" y="198" width="218" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Linea" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="msT-C8-nyb">
+                                                <rect key="frame" x="0.0" y="238" width="218" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Modelo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b6g-dh-AFC">
+                                                <rect key="frame" x="0.0" y="278" width="218" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Capacidad tanque Lt" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8XX-OQ-55y">
+                                                <rect key="frame" x="0.0" y="318" width="218" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datos cambio aceite" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9g-LA-VSx">
+                                                <rect key="frame" x="0.0" y="358" width="218" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="Hej-6F-Ydl"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ultimo cambio de aceite" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aZM-Wp-7qo">
+                                                <rect key="frame" x="0.0" y="398" width="218" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="frecuencia cambio aceite (Km)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tDE-Vb-cIl">
+                                                <rect key="frame" x="0.0" y="438" width="218" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha vencimiento" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23b-Hy-eKW">
+                                                <rect key="frame" x="0.0" y="478" width="218" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="3qJ-UG-7YC"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Seguro abligatorio SOAT" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f3t-vm-wLH">
+                                                <rect key="frame" x="0.0" y="518" width="218" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Técnico mecánica" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IhV-VB-6gl">
+                                                <rect key="frame" x="0.0" y="558" width="218" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="rgI-U5-qGk" firstAttribute="top" secondItem="TVu-9A-XFe" secondAttribute="top" constant="20" id="4ql-ET-RXz"/>
-                                            <constraint firstAttribute="height" constant="1000" id="NLX-9M-Uwi"/>
-                                            <constraint firstItem="rgI-U5-qGk" firstAttribute="centerX" secondItem="TVu-9A-XFe" secondAttribute="centerX" id="S4v-Rm-3Y9"/>
-                                        </constraints>
-                                    </view>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="TVu-9A-XFe" firstAttribute="top" secondItem="uTd-0F-AR9" secondAttribute="top" id="8dD-G4-aWC"/>
-                                    <constraint firstItem="TVu-9A-XFe" firstAttribute="leading" secondItem="uTd-0F-AR9" secondAttribute="leading" id="CGm-PU-iS3"/>
-                                    <constraint firstAttribute="bottom" secondItem="TVu-9A-XFe" secondAttribute="bottom" id="L7a-Jr-Mx4"/>
-                                    <constraint firstAttribute="trailing" secondItem="TVu-9A-XFe" secondAttribute="trailing" id="Q6d-Kw-2LA"/>
+                                    <constraint firstAttribute="bottom" secondItem="rgI-U5-qGk" secondAttribute="bottom" constant="20" id="AFH-n2-dwu"/>
+                                    <constraint firstAttribute="trailing" secondItem="5u8-CB-dOw" secondAttribute="trailing" constant="51" id="Bk3-H9-PIE"/>
+                                    <constraint firstItem="5u8-CB-dOw" firstAttribute="leading" secondItem="uTd-0F-AR9" secondAttribute="leading" constant="51" id="CGb-O6-mSS"/>
+                                    <constraint firstItem="rgI-U5-qGk" firstAttribute="top" secondItem="uTd-0F-AR9" secondAttribute="top" constant="20" id="LwP-h1-iGP"/>
+                                    <constraint firstItem="rgI-U5-qGk" firstAttribute="centerX" secondItem="uTd-0F-AR9" secondAttribute="centerX" id="aZa-EA-0j3"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -205,8 +198,6 @@
                         <constraints>
                             <constraint firstItem="uTd-0F-AR9" firstAttribute="centerX" secondItem="8Ag-7f-1Db" secondAttribute="centerX" id="NI2-cj-JWx"/>
                             <constraint firstItem="uTd-0F-AR9" firstAttribute="top" secondItem="ZtD-Mn-4QC" secondAttribute="bottom" id="Rgh-rs-2Th"/>
-                            <constraint firstItem="TVu-9A-XFe" firstAttribute="height" secondItem="8Ag-7f-1Db" secondAttribute="height" id="byh-eX-Xnh"/>
-                            <constraint firstItem="TVu-9A-XFe" firstAttribute="width" secondItem="8Ag-7f-1Db" secondAttribute="width" id="lkB-pl-6dA"/>
                             <constraint firstItem="uTd-0F-AR9" firstAttribute="leading" secondItem="8Ag-7f-1Db" secondAttribute="leading" id="osW-Wt-APQ"/>
                             <constraint firstItem="eMF-Ab-SIu" firstAttribute="top" secondItem="uTd-0F-AR9" secondAttribute="bottom" id="tRd-7w-oxK"/>
                             <constraint firstAttribute="trailing" secondItem="uTd-0F-AR9" secondAttribute="trailing" id="yOs-Oa-KU6"/>
@@ -219,8 +210,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="1000"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="frecuenciaaceiteTextField" destination="tDE-Vb-cIl" id="0ke-VL-KeO"/>
                         <outlet property="kilometerTextField" destination="RId-x6-GCP" id="ceJ-dH-ACN"/>
@@ -619,6 +609,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="qLO-1a-GQG"/>
+        <segue reference="oyw-GS-Try"/>
     </inferredMetricsTieBreakers>
 </document>
